@@ -105,7 +105,7 @@ public class Tamagochi extends JPanel {
 		c.gridx = 5;
 		c.gridy = 1;
 		JButton b5 = new JButton("Охотиться");
-		
+		b5.addActionListener(new B5Listener());
 		gbl.setConstraints(b5, c);
 		f.add(b5);
 
@@ -152,12 +152,17 @@ public class Tamagochi extends JPanel {
 			g.drawImage(ing1, 100, 150, 50, 50, null);
 			break;
 		//разработчик: ______________
-		//разработчик: ______________	
+		//разработчик: DivanisAnatoly.Задача: кнопка Охотиться.
+		case 3:
+			ImageIcon i13 = new ImageIcon(getClass().getResource("/img/mouse.png"));
+			Image ing3 = i13.getImage();
+			g.drawImage(ing3, 100, 150, 50, 50, null);
+		}
 		//разработчик: ______________
 		
 		}
 
-	}
+	
 
 	//слушатель кнопки Играть
 	class B1Listener implements ActionListener{
@@ -167,6 +172,13 @@ public class Tamagochi extends JPanel {
 			lm.setText("Minecraft рулит!");
 			repaint();			
 		}		
-	}	
-
+	}
+	//слушатель кнопки Охотиться
+	class B5Listener implements ActionListener{
+		public void actionPerformed(ActionEvent eo) {
+			action = 3;
+			lm.setText("arghhh");
+			repaint();
+		}	
+	}
 }
